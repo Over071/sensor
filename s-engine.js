@@ -159,7 +159,7 @@ function exportcsv(){
 	}
 
 	//キーの値をCSV用にリスト化
-	finalVal += localstragekey +","+ d_acc_x +","+ d_acc_y +","+ d_acc_z +","+ d_acc_gx +","+ d_acc_gy +","+ d_acc_gz +'\n';
+	finalVal += d_acc_x +","+ d_acc_y +","+ d_acc_z +","+ d_acc_gx +","+ d_acc_gy +","+ d_acc_gz +'\n';
   }
 
 
