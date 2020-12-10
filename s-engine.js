@@ -178,7 +178,7 @@ var seconds = ("0"+date.getSeconds()).slice(-2);
   var download = document.getElementById('download');
   download.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(finalVal));
 
-  download.setAttribute('download',+ month +"/"+ day +" "+ hours +":"+ minutes +":"+ seconds +'.csv');
+  download.setAttribute('download',+ month +'/'+ day +","+ hours +":"+ minutes +":"+ seconds +'.csv');
 
 
 }
