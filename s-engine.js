@@ -124,7 +124,7 @@ function exportcsv(){
 
   var finalVal = '';
 
-  for(var i = 0; i < 263 ; i++) {
+  for(var i = 0; i < 1000 ; i++) {
 
 	var localstragekey = localStorage.key(i)
 	var d_acc_x="";
