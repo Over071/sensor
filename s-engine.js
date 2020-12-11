@@ -55,9 +55,9 @@ document.getElementById("startstop").innerHTML="測定開始";
 
 	  //加速度(重力加速度)
 	  var acc_g = e.accelerationIncludingGravity;
-	  var gx = Numlimit5(acc_g.x,5);
-	  var gy = Numlimit5(acc_g.y,5);
-	  var gz = Numlimit5(acc_g.z,5);
+	  var gx = Numlimit5(acc_g.x);
+	  var gy = Numlimit5(acc_g.y);
+	  var gz = Numlimit5(acc_g.z);
 
 	  //回転
 	  var rota_r = e.rotationRate;
@@ -159,7 +159,7 @@ function exportcsv(){
 	}
 
 	//キーの値をCSV用にリスト化
-	finalVal += localstragekey+","+d_acc_x +","+ d_acc_y +","+ d_acc_z +","+ d_acc_gx +","+ d_acc_gy +","+ d_acc_gz +'\n';
+	finalVal += localstragekey+","+d_acc_x +","+ d_acc_y +","+ d_acc_z  +'\n';
   }
 
 
