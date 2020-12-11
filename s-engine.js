@@ -55,9 +55,9 @@ document.getElementById("startstop").innerHTML="測定開始";
 
 	  //加速度(重力加速度)
 	  var acc_g = e.accelerationIncludingGravity;
-	  var gx = Numlimit5(acc_g.x);
-	  var gy = Numlimit5(acc_g.y);
-	  var gz = Numlimit5(acc_g.z);
+	  var gx = Numlimit5(acc_g.x,5);
+	  var gy = Numlimit5(acc_g.y,5);
+	  var gz = Numlimit5(acc_g.z,5);
 
 	  //回転
 	  var rota_r = e.rotationRate;
@@ -71,8 +71,8 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  printValue('acc-y', y); //y
 	  printValue('acc-z', z); //z
 
-	  console.log('acc-gx', gx); //gx
-	  console.log('acc-gy', gy); //gy
+	  printValue('acc-gx', gx); //gx
+	  printValue('acc-gy', gy); //gy
 	  printValue('acc-gz', gz); //gz 
 
 	  printValue('rr-a', ra); //ra
