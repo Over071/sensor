@@ -71,8 +71,8 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  printValue('acc-y', y); //y
 	  printValue('acc-z', z); //z
 
-	  printValue('acc-gx', gx); //gx
-	  printValue('acc-gy', gy); //gy
+	  console.log('acc-gx', gx); //gx
+	  console.log('acc-gy', gy); //gy
 	  printValue('acc-gz', gz); //gz 
 
 	  printValue('rr-a', ra); //ra
