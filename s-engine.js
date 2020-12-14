@@ -67,17 +67,17 @@ document.getElementById("startstop").innerHTML="測定開始";
 
 	  //取得値の表示
 
-	  printValue('acc-x', x); //x
-	  printValue('acc-y', y); //y
-	  printValue('acc-z', z); //z
+	  doubleValue('acc-x', x); //x
+	  doubleValue('acc-y', y); //y
+	  doubleValue('acc-z', z); //z
 
-	  printValue('acc-gx', gx); //gx
-	  printValue('acc-gy', gy); //gy
-	  printValue('acc-gz', gz); //gz 
+	  doubleValue('acc-gx', gx); //gx
+	  doubleValue('acc-gy', gy); //gy
+	  doubleValue('acc-gz', gz); //gz 
 
-	  printValue('rr-a', ra); //ra
-	  printValue('rr-b', rb); //rb
-	  printValue('rr-g', rg); //rg 
+	  doubleValue('rr-a', ra); //ra
+	  doubleValue('rr-b', rb); //rb
+	  doubleValue('rr-g', rg); //rg 
 
 	  //保存データ
 	  var datalist = {acc_x:x,acc_y:y,acc_z:z,acc_gx:gx,acc_gy:gy,acc_gz:gz,rr_a:ra,rr_b:rb,rr_g:rg}
