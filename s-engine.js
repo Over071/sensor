@@ -83,12 +83,8 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  var datalist = {acc_x:x,acc_y:y,acc_z:z,acc_gx:gx,acc_gy:gy,acc_gz:gz,rr_a:ra,rr_b:rb,rr_g:rg}
 
 	  //ローカルストレージに記録
-	  var sec=0;
-	  var cnt=sec;
-	  var id=setInterval(function(){
-		cnt++;
-		localStorage.setItem(cnt, JSON.stringify(datalist));
-	  },1000);
+	  localStorage.setItem(time_unix, JSON.stringify(datalist));
+	  
 
 	  function printValue(id, value){
 	  var id_obj = document.getElementById(id);
@@ -129,7 +125,7 @@ function exportcsv(){
 
   var finalVal = '';
 
-  for(var i = 0; i < 1000 ; i++) {
+  for(var i = 0; i < localStorage.length ; i++) {
 
 	var localstragekey = localStorage.key(i)
 	var d_acc_x="";
