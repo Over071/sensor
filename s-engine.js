@@ -84,10 +84,10 @@ document.getElementById("startstop").innerHTML="測定開始";
 
 	  //ローカルストレージに記録
 	  var sec=0;
+	  var cnt=sec;
 	  var id=setInterval(function(){
-		sec++;
-		document.form_count.counter.value = sec;
-		localStorage.setItem(sec, JSON.stringify(datalist));
+		cnt++;
+		localStorage.setItem(cnt, JSON.stringify(datalist));
 	  },time_unix);
 
 	  function printValue(id, value){
