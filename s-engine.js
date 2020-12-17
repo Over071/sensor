@@ -20,9 +20,8 @@ if (document.getElementById("startstop").innerHTML=="測定開始"){
 
 sensor_on(); //開始
 document.getElementById("startstop").innerHTML="停止";
-
-} else {
-
+} 
+else {
 sensor_off(); //停止
 document.getElementById("startstop").innerHTML="測定開始";
 
@@ -33,6 +32,9 @@ document.getElementById("startstop").innerHTML="測定開始";
 	function sensor_off(){
 		window.removeEventListener("devicemotion", sensor, false);
 		}
+		//オリジナル
+		var e_time=new Date();
+		var count=e_time.getTime()-s_time.getTime();
 		
     	
 	function sensor_on(){
@@ -46,6 +48,9 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  var date = new Date() ;
 	  var time_unix = date.getTime() ;
 	  printValue("unixtime", time_unix);
+	  //オリジナル
+	  var s_time=null;
+	  s_time=new Date();
 			
 	  //加速度
 	  var acc = e.acceleration;
@@ -83,7 +88,7 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  var datalist = {acc_x:x,acc_y:y,acc_z:z,acc_gx:gx,acc_gy:gy,acc_gz:gz,rr_a:ra,rr_b:rb,rr_g:rg}
 
 	  //ローカルストレージに記録
-	  localStorage.setItem(time_unix, JSON.stringify(datalist));
+	  localStorage.setItem(count, JSON.stringify(datalist));
 	  
 
 	  function printValue(id, value){
