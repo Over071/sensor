@@ -20,8 +20,9 @@ if (document.getElementById("startstop").innerHTML=="測定開始"){
 
 sensor_on(); //開始
 document.getElementById("startstop").innerHTML="停止";
-} 
-else {
+
+} else {
+
 sensor_off(); //停止
 document.getElementById("startstop").innerHTML="測定開始";
 
@@ -150,8 +151,6 @@ function exportcsv(){
 	if(localStorage.getItem(localstragekey)){
 
 	var d = JSON.parse(localStorage.getItem(localstragekey));
-		
-		d_count=
 
 		d_acc_x = d.acc_x;
 		d_acc_y = d.acc_y;
