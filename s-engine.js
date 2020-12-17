@@ -32,9 +32,7 @@ document.getElementById("startstop").innerHTML="測定開始";
 	function sensor_off(){
 		window.removeEventListener("devicemotion", sensor, false);
 		}
-		//オリジナル
-		var e_time=new Date();
-		var count=e_time.getTime()-s_time.getTime();
+
 		
     	
 	function sensor_on(){
@@ -49,8 +47,8 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  var time_unix = date.getTime() ;
 	  printValue("unixtime", time_unix);
 	  //オリジナル
-	  var s_time=null;
-	  s_time=new Date();
+	  //var s_time=null;
+	  //s_time=new Date();
 			
 	  //加速度
 	  var acc = e.acceleration;
@@ -88,7 +86,7 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  var datalist = {acc_x:x,acc_y:y,acc_z:z,acc_gx:gx,acc_gy:gy,acc_gz:gz,rr_a:ra,rr_b:rb,rr_g:rg}
 
 	  //ローカルストレージに記録
-	  localStorage.setItem(count, JSON.stringify(datalist));
+	  localStorage.setItem(time_unix, JSON.stringify(datalist));
 	  
 
 	  function printValue(id, value){
@@ -133,6 +131,10 @@ function exportcsv(){
   for(var i = 0; i < localStorage.length ; i++) {
 
 	var localstragekey = localStorage.key(i)
+	//オリジナル
+	var e_time=new Date();
+	var count=e_time.getTime()-s_time.getTime();
+
 	var d_acc_x="";
 	var d_acc_y="";
 	var d_acc_z="";
@@ -148,6 +150,8 @@ function exportcsv(){
 	if(localStorage.getItem(localstragekey)){
 
 	var d = JSON.parse(localStorage.getItem(localstragekey));
+		
+		d_count=
 
 		d_acc_x = d.acc_x;
 		d_acc_y = d.acc_y;
@@ -165,7 +169,7 @@ function exportcsv(){
 	}
 
 	//キーの値をCSV用にリスト化
-	finalVal += localstragekey+","+d_acc_x +","+ d_acc_y +","+ d_acc_z  +'\n';
+	finalVal += localstragekey+","+count+","+d_acc_x +","+ d_acc_y +","+ d_acc_z  +'\n';
   }
 
 
