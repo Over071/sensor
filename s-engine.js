@@ -132,8 +132,8 @@ function exportcsv(){
 
 	var localstragekey = localStorage.key(i)
 	//オリジナル
-	var e_time=new Date();
-	var count=e_time.getTime()-s_time.getTime();
+	//var e_time=new Date();
+	//var count=e_time.getTime()-s_time.getTime();
 
 	var d_acc_x="";
 	var d_acc_y="";
@@ -169,7 +169,7 @@ function exportcsv(){
 	}
 
 	//キーの値をCSV用にリスト化
-	finalVal += localstragekey+","+count+","+d_acc_x +","+ d_acc_y +","+ d_acc_z  +'\n';
+	finalVal += localstragekey+","+d_acc_x +","+ d_acc_y +","+ d_acc_z  +'\n';
   }
 
 
