@@ -83,8 +83,11 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  var datalist = {acc_x:x,acc_y:y,acc_z:z,acc_gx:gx,acc_gy:gy,acc_gz:gz,rr_a:ra,rr_b:rb,rr_g:rg}
 
 	  //ローカルストレージに記録
-	  var seconds = ("0"+date.getSeconds()).slice(-2);
-	  localStorage.setItem(seconds, JSON.stringify(datalist));
+	  var sec=0;
+	  var id=setInterval(function(){
+		sec++;  
+		localStorage.setItem(sec, JSON.stringify(datalist));
+	  },1000);
 
 	  function printValue(id, value){
 	  var id_obj = document.getElementById(id);
