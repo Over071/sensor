@@ -88,7 +88,7 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  var id=setInterval(function(){
 		cnt++;
 		localStorage.setItem(cnt, JSON.stringify(datalist));
-	  },time_unix);
+	  },1000);
 
 	  function printValue(id, value){
 	  var id_obj = document.getElementById(id);
