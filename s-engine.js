@@ -48,8 +48,8 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  var time_unix = date.getTime() ;
 	  printValue("unixtime", time_unix);
 	  //オリジナル
-	  var s_time=null;
-	  s_time=new Date();
+	  //var s_time=null;
+	  //s_time=new Date();
 			
 	  //加速度
 	  var acc = e.acceleration;
@@ -133,8 +133,8 @@ function exportcsv(){
 
 	var localstragekey = localStorage.key(i)
 	//オリジナル
-	var e_time=new Date();
-	var count=e_time.getTime()-s_time.getTime();
+	//var e_time=new Date();
+	//var count=e_time.getTime()-s_time.getTime();
 
 	var d_acc_x="";
 	var d_acc_y="";
@@ -168,7 +168,7 @@ function exportcsv(){
 	}
 
 	//キーの値をCSV用にリスト化
-	finalVal += localstragekey+","+count+","+d_acc_x +","+ d_acc_y +","+ d_acc_z  +'\n';
+	finalVal += localstragekey+","+d_acc_x +","+ d_acc_y +","+ d_acc_z  +'\n';
   }
 
 
