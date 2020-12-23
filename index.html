@@ -13,8 +13,8 @@
       navigator.geolocation.getCurrentPosition(
       // 位置情報取得成功時
       function (position) {
-              var location ="緯度:" + position.coords.latitude ; //緯度
-              location += "経度" + position.coords.longitude ; //経度
+              var location ="緯度:" + position.coords.latitude +"<br>"; //緯度
+              location += "経度:" + position.coords.longitude +"<br>"; //経度
               location += "緯度・経度間の誤差：" + position.coords.accuracy ; //緯度・経度の誤差
               document.getElementById("location").innerHTML = location;
       },
