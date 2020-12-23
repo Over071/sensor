@@ -7,6 +7,41 @@
     <title>SENSOR</title>
 <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="s-engine.js"></script>
+<script type="text/javascript">
+  if (navigator.geolocation) {
+      // 現在の位置情報取得を実施
+      navigator.geolocation.getCurrentPosition(
+      // 位置情報取得成功時
+      function (position) {
+              var location ="<li>"+"Latitude：" + position.coords.latitude + "</li>"; //緯度
+              location += "<li>"+"longitude：" + position.coords.longitude + "</li>"; //経度
+              location += "<li>"+"altitude：" + position.coords.altitude + " m</li>"; //高度
+              location += "<li>"+"accuracy：" + position.coords.accuracy + " m</li>"; //緯度・経度の誤差
+              location += "<li>"+"altitudeAccuracy：" + position.coords.altitudeAccuracy + " m</li>"; //高度の誤差
+              location += "<li>"+"heading：" + position.coords.heading + "</li>"; //方向 0-360
+              location += "<li>"+"speed：" + position.coords.speed + " m/sec</li>"; //速度
+              document.getElementById("location").innerHTML = location;
+      },
+      // 位置情報取得失敗時
+      function (error) {
+              switch(error.code)
+                {
+                  case 1:
+                    var location = "<li>位置情報の利用が許可されていません</li>";
+                    break;
+                  case 2:
+                    var location = "<li>デバイスの位置が判定できませんでした</li>";
+                    break;
+                  case 3:
+                    var location = "<li>タイムアウトが発生しました</li>";
+                    break;
+                }
+              document.getElementById("location").innerHTML = location;
+      });
+  } else {
+      window.alert("<li>Geolocation APIが搭載されていないブラウザです。</li>");
+  }
+</script>
 <link rel="stylesheet" type="text/css" href="sensor.css">
   </head>
   <body>

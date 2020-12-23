@@ -69,33 +69,6 @@ document.getElementById("startstop").innerHTML="測定開始";
 	  var rb = Numlimit5(rota_r.beta); 
 	  var rg = Numlimit5(rota_r.gamma);
 
-	  //オリジナル位置情報
-	  if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(
-			// 位置情報取得成功時
-			function (position) {
-					var location ="<li>"+"Latitude：" + position.coords.latitude + "</li>"; //緯度
-					location += "<li>"+"longitude：" + position.coords.longitude + "</li>"; //経度
-					location += "<li>"+"accuracy：" + position.coords.accuracy + " m</li>"; //緯度・経度の誤差
-					document.getElementById("location").innerHTML = location;
-			},
-			// 位置情報取得失敗時
-			function (error) {
-					switch(error.code)
-					  {
-						case 1:
-						  var location = "<li>位置情報の利用が許可されていません</li>";
-						  break;
-						case 2:
-						  var location = "<li>デバイスの位置が判定できませんでした</li>";
-						  break;
-						case 3:
-						  var location = "<li>タイムアウトが発生しました</li>";
-						  break;
-					  }
-					document.getElementById("location").innerHTML = location;
-			});
-	  }
 
 	  //取得値の表示
 
