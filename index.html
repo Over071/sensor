@@ -13,9 +13,9 @@
       navigator.geolocation.getCurrentPosition(
       // 位置情報取得成功時
       function (position) {
-              var location ="<li>"+"Latitude：" + position.coords.latitude + "</li>"; //緯度
-              location += "<li>"+"longitude：" + position.coords.longitude + "</li>"; //経度
-              location += "<li>"+"accuracy：" + position.coords.accuracy + " m</li>"; //緯度・経度の誤差
+              var location ="緯度:" + position.coords.latitude ; //緯度
+              location += "経度" + position.coords.longitude ; //経度
+              location += "緯度・経度間の誤差：" + position.coords.accuracy ; //緯度・経度の誤差
               document.getElementById("location").innerHTML = location;
       },
       // 位置情報取得失敗時
@@ -56,7 +56,7 @@
   <h2>位置情報</h2>
   <p>緯度:<span id=location></span></p>
   </div>
-  
+
 	<div id="time">
 	<h2>時刻[1/1000sec]</h2>
           <p>t: <span id="unixtime"></span></p>
